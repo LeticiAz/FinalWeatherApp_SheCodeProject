@@ -4,35 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <form>
-            <input type="search" placeholder="Enter a city..." required/>
-            <input type="submit" value="Search"/>
-        </form>
-    </header>
-    <main>
-        <div>
-            <h1>Paris</h1>
-            <p>
-                Saturday 10:39, clean sky
-                <br/>
-                Humidity: 22%, Wind: 3.13km/h
-            </p>
-        </div>
-        <div>
-            ☀ 27ºC
-        </div>
+    <div class="weather-app">
+        <header>
+            <form>
+                <input type="search" placeholder="Enter a city..." required/>
+                <input type="submit" value="Search"/>
+            </form>
+        </header>
+        <main>
+            <div>
+                <h1>Paris</h1>
+                <p>
+                    Saturday 10:39, clean sky
+                    <br/>
+                    Humidity: 22%, Wind: 3.13km/h
+                </p>
+            </div>
+            <div>
+                ☀ 27ºC
+            </div>
 
-    </main>
-    <footer>Coded by
-        <a href="https://github.com/LeticiAz" target="_blank" rel="noreferrer">Letícia Azevedo</a>
-         is open-sourced on 
-        <a href="https://github.com/LeticiAz/FinalWeatherApp_SheCodeProject" target="_blank" rel="noreferrer">GitHub</a>
-         and hosted by 
-        <a href="https://finalweatherapp-shecode.netlify.app/" target="_blank" rel="noreferrer">Netlify</a></footer>
+        </main>
+        <footer>Coded by
+            <a href="https://github.com/LeticiAz" target="_blank" rel="noreferrer">Letícia Azevedo</a>
+            is open-sourced on 
+            <a href="https://github.com/LeticiAz/FinalWeatherApp_SheCodeProject" target="_blank" rel="noreferrer">GitHub</a>
+            and hosted by 
+            <a href="https://finalweatherapp-shecode.netlify.app/" target="_blank" rel="noreferrer">Netlify</a>
+        </footer>
+    </div>
 </body>
 <script src="index.js"></script>
 </html>
