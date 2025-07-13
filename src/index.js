@@ -57,6 +57,29 @@ function handleSearchSubmit (event) {
     searchCity(city);
 }
 
+function displayForecast () {
+    let forcastElement = document.querySelector("#forecast");
+
+    let days = ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun'];
+    let forcastHtml = "";
+
+    days.forEach(function (day) {
+        forcastHtml += `
+            <div class="weather-forecast-day">
+                <div class="weather-forecast-date">${day}</div>
+                <div class="weather-forecast-icon"></div>
+                <div class="weather-forecast-temps">
+                    <span class="weather-forecast-temp">
+                        <strong>12º</strong>
+                    </span>
+                    <span class="weather-forecast-temp">9º</span>
+                </div>
+            </div>
+        `;
+    })
+   forcastElement.innerHTML = forcastHtml;
+}
+
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
@@ -64,3 +87,5 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 window.onload = function () {
   searchCity("Aveiro");
 };
+
+displayForecast();
