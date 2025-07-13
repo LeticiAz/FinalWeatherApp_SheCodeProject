@@ -21,6 +21,8 @@ function updateWeatherInfo (response) {
     
     let iconElement = document.querySelector("#weather-icon");
     iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+    
+    getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -57,8 +59,15 @@ function handleSearchSubmit (event) {
     searchCity(city);
 }
 
-function displayForecast () {
-    let forcastElement = document.querySelector("#forecast");
+function getForecast(city){
+    let apiKey = "c56dcb7t88aa43c2b2f5cfa690a8917o";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`
+    axios.get(apiUrl).then(displayForecast);
+}
+
+
+function displayForecast (response) {
+    console.log(response.data);
 
     let days = ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun'];
     let forcastHtml = "";
@@ -76,8 +85,9 @@ function displayForecast () {
                 </div>
             </div>
         `;
-    })
-   forcastElement.innerHTML = forcastHtml;
+    });
+    let forcastElement = document.querySelector("#forecast");
+    forcastElement.innerHTML = forcastHtml;
 }
 
 
@@ -87,5 +97,3 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 window.onload = function () {
   searchCity("Aveiro");
 };
-
-displayForecast();
